@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "C:\\Users\\Pats\\workspace\\trading"
+		},
+		{
+			"path": "C:\\Users\\Pats\\workspace\\backoffice-client"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}
