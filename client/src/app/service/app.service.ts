@@ -17,9 +17,13 @@ export class AppService {
   constructor(private httpClient: HttpClient) { }
 
   getPhotos(criteria: string): Observable<string[]> {
-    return this.httpClient.get<string[]>(Boolean(criteria) ? `http://localhost:8000/api?criteria=${criteria}` : 'http://localhost:8000/api')
-    .pipe(
-      map((body) => body)
-    );
+    return this.httpClient.get<string[]>(
+      Boolean(criteria) ?
+        `http://ec2-18-189-22-118.us-east-2.compute.amazonaws.com:8000/api?criteria=${criteria}` :
+        'http://ec2-18-189-22-118.us-east-2.compute.amazonaws.com:8000/api'
+      )
+      .pipe(
+        map((body) => body)
+      );
   }
 }

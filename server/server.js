@@ -1,11 +1,15 @@
 const express = require('express');
 const request = require('request');
 const http = require('http');
+const path = require('path');
 const app = express();
 const cors = require('cors');
 
 app.use(cors());
 app.set('port', 8000);
+
+// Serve the angular app client
+app.use(express.static('dist/client'));
 
 const router = express.Router();
 
