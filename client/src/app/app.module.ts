@@ -14,6 +14,7 @@ import { APP_SERVICE_TOKEN, AppService } from './service/app.service';
 import { Epics } from './store/epics';
 import { Reducers } from './store/reducers';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatButtonModule,
     FlexLayoutModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgReduxModule,
     HttpClientModule,
     BrowserModule,

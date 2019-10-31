@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiActions } from './actions/api.actions';
 import { select } from '@angular-redux/store';
 import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,12 +14,21 @@ export class AppComponent {
 
   photos: string[];
 
+  // form control for search criteria
+  searchFormCtrl: FormControl;
+
   @select('photos')
   private readonly photosSubscriber: Observable<string[]>;
 
   constructor(private apiActions: ApiActions) {
-    this.apiActions.getPhotos('');
-
+    this.searchFormCtrl = new FormControl();
+    this.apiActions.getPhotos();
     this.photosSubscriber.subscribe(photos => this.photos = photos);
+  }
+
+  // Search photos
+  searchPhotosByCriteria() {
+    console.log('searchPhotosByCriteria = ', this.searchFormCtrl.value);
+    this.apiActions.getPhotos(this.searchFormCtrl.value);
   }
 }

@@ -26,8 +26,8 @@ export class Epics {
       .pipe(
         ofType(ActionTypes.GET_PHOTOS),
         switchMap((action: APIAction) => {
-          console.log('createGetPhotos request', state$.value, action.payload);
-          return this.appService.getPhotos('')
+          // Now call backend to search photos
+          return this.appService.getPhotos(action.payload as string)
           .pipe(
             map(response => {
               return this.apiActions.getPhotosSuccess(response as string[]);

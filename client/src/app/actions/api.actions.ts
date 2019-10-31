@@ -11,7 +11,7 @@ export type APIAction = FluxStandardAction<Payload>;
 export class ApiActions {
 
   @dispatch()
-  getPhotos = (payload: Payload): APIAction => ({
+  getPhotos = (payload: Payload = null): APIAction => ({
     type: ActionTypes.GET_PHOTOS,
     payload
   })

@@ -5,11 +5,11 @@
           <div fxFlex="100" fxLayout="row" fxLayoutGap="10px">
             <div fxLayout="column" fxFlex="90">
                 <mat-form-field fxFlex="auto">
-                  <input matInput placeholder="Enter search criteria">
+                  <input [formControl]="searchFormCtrl" matInput placeholder="Enter search criteria">
                 </mat-form-field>
             </div>
             <div fxLayout="column" fxFlex="auto" fxLayoutAlign="center">
-              <a mat-raised-button>Search</a>
+              <a mat-raised-button (click)="searchPhotosByCriteria()">Search</a>
             </div>
           </div>
         </mat-toolbar-row>

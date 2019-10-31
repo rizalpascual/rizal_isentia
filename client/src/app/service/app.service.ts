@@ -17,7 +17,7 @@ export class AppService {
   constructor(private httpClient: HttpClient) { }
 
   getPhotos(criteria: string): Observable<string[]> {
-    return this.httpClient.get<string[]>(`http://localhost:3000/`)
+    return this.httpClient.get<string[]>(Boolean(criteria) ? `http://localhost:8000/api?criteria=${criteria}` : 'http://localhost:8000/api')
     .pipe(
       map((body) => body)
     );
